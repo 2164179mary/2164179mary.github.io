@@ -15,7 +15,7 @@
                 <h2>Your Budget: </h2>
                 <form id="budgetForm" onsubmit="validateForm()">
                     <input id="budget-value" type="text" placeholder="Enter your budget..." name="budget" required autofocus>
-                    <button type="button" onclick="getBudget()">click</button>
+                    <button type="button" onclick="getBudget()" id = "budget-value">Next</button>
                 </form>
             </div>
             <div id="filter-background">
@@ -52,7 +52,7 @@
                         <input type="checkbox" id="casual" onclick="getAmbience(this.id)">Casual
                         </div>
                     </div> 
-                    <button type="button" onclick="compile()">next</button>
+                    <button type="button" onclick="compile()" >Submit</button>
                 </div>
                 <ul id="showCafe">
                 </ul>
