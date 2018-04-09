@@ -3,6 +3,7 @@
     <head>
         <title>Home: CashFe</title>
         <link rel="stylesheet" type="text/css" href="CSS/home.css">
+        <link rel="stylesheet" type="text/css" href="CSS/sample.css">
     </head>
     <body>
 
@@ -52,11 +53,17 @@
                         <input type="checkbox" id="casual" onclick="getAmbience(this.id)">Casual
                         </div>
                     </div> 
-                    <button type="button" onclick="compile()" >Submit</button>
-                </div>
-                <ul id="showCafe">
-                </ul>
+                    <div id = "button-click">
+                    <button type="button" onclick="callPrintCafe()" class = "clickme">FILTER</button>
+                    <button type="button" onclick="resetCafe()" class = "clickme">RESET</button>                      
+                    </div>
 
+                    <ul>
+                        <div id="cafeResults"></div>
+                    </ul>
+                    <ul id="menuResults">
+                    </ul>
+                </div>
             </div>
         <script src="scripts/indexedDB.js" async></script>
         </div>
