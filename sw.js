@@ -1,6 +1,7 @@
 const staticAssets = [
     './',
-    './manifest.json',
+	'index.html',
+    './manifest3.json',
     './home.html',
     './CSS/index.css',
     './CSS/home.css',
