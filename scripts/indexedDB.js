@@ -1,16 +1,3 @@
-//NOTES//
-
-/* TEST in console (CTRL +SHIFT J)
--enter all the details(filter) needed and click "NEXT" using the html file.
-- type "cafeList;" to return the list of cafe filtered
-- type "showMenu(idOfCafe);" to return the list of the menu filtered.
-*/
-
-/*
-NEXT GOAL:
-    implement the results in the html. (eg: auto creation of table, etc.)
-*/
-
 var categories = [];
 var budget;
 var availability;
@@ -93,8 +80,8 @@ const menu = [
     {id: 14, cafeId: 2, menuName: "Matcha Pasta", menuType: "pasta", price: 430},
     {id: 15, cafeId: 3, menuName: "milk Cake", menuType: "cakes", price: 320},
     {id: 16, cafeId: 3, menuName: "milk Cookies", menuType: "cookies", price: 500},
-    {id: 17, cafeId: 1, menuName: "Sweet pasta", menuType: "pasta", price: 120},
-    {id: 18, cafeId: 2, menuName: "vanilla latte", menuType: "coffee", price: 120},
+    {id: 17, cafeId: 3, menuName: "Sweet pasta", menuType: "pasta", price: 120},
+    {id: 18, cafeId: 3, menuName: "vanilla latte", menuType: "coffee", price: 120},
     {id: 19, cafeId: 3, menuName: "Vanilla tea", menuType: "milk", price: 120},
     {id: 20, cafeId: 3, menuName: "milk Frappe", menuType: "frappe", price: 320},
     {id: 21, cafeId: 3, menuName: "milk juice", menuType: "juice", price: 786},
@@ -127,54 +114,6 @@ request.onupgradeneeded = function(event) {
         }
 }
  
-/*function menuQuery() {
-    menuList = [];
-    var objectStore = db.transaction("menu").objectStore("menu");
-  
-        objectStore.openCursor().onsuccess = function(event) {
-          var cursor = event.target.result;
-          if (cursor) {
-              if(cursor.value.price <= budget){
-                  if(categories.length == 0){
-                        menuList.push(cursor.value);
-                  }else {
-                      for(var i = 0; i < categories.length; i++){
-                      
-                        if(categories[i] == cursor.value.menuType){
-                          menuList.push(cursor.value);
-                        } 
-                       }
-                       
-                  } 
-                  
-              }
-            cursor.continue();
-          }
-        };     
-}
-
-function cafeQuery(){
-    cafeList = [];
-    var objectStore = db.transaction("cafe").objectStore("cafe");
-        objectStore.openCursor().onsuccess = function(event) {
-          var cursor = event.target.result;
-          if (cursor) {
-              if(cursor.value.wifi == availability){
-                  if(ambience.length == 0){
-                        cafeList.push(cursor.value);
-                  }else {
-                  for(var i = 0; i < ambience.length; i++) {
-                      if(cursor.value.ambience == ambience[i]){
-                          cafeList.push(cursor.value);
-                  }
-                  }
-              }
-          }
-            cursor.continue();
-        }
-    };     
-}*/
-
 function compile(){
     menuQuery();
     cafeQuery();
@@ -182,12 +121,37 @@ function compile(){
 }
 
 var printCafe = function(){
+    var iterate = 0;
     var objectStore = db.transaction("cafe").objectStore("cafe");
         objectStore.openCursor().onsuccess = function(event) {
           var cursor = event.target.result;
           if (cursor) {
-              if(cursor.value.wifi == availability){
-                  if(ambience.length == 0){
+              if(availability==undefined && ambience.length == 0){
+                  console.log("HELLO WORLD");
+                  var print = cursor.value.cafeName;
+                        var location = cursor.value.cafeLocation;
+                        var id = cursor.value.id;
+                        var ids = "a"+id+"b";
+                        var prints = print+"a";
+                        var div = document.createElement('div');
+                        div.setAttribute('id', ids);
+                        var a = document.createElement('button');
+                        //a.setAttribute('href', "");
+                        a.setAttribute('id', id);
+                        a.setAttribute('value', iterate);
+                        a.setAttribute('onclick', "callPrintMenu(this.id, this.getAttribute('value'))");
+                        a.innerHTML = print+"\t\t Location: "+location;
+                        var li = document.createElement('li');
+                          //li.setAttribute('id', i);
+                        var element = document.getElementById("cafeResults");
+                        element.appendChild(li);
+                        li.appendChild(a);
+                        li.appendChild(div);
+                        iterate++;
+              }else{
+                  if(availability==undefined && ambience.length != 0){
+                      for(var i = 0; i < ambience.length; i++) {
+                      if(cursor.value.ambience == ambience[i]){
                         var print = cursor.value.cafeName;
                         var location = cursor.value.cafeLocation;
                         var id = cursor.value.id;
@@ -207,6 +171,31 @@ var printCafe = function(){
                         element.appendChild(li);
                         li.appendChild(a);
                         li.appendChild(div);
+                    }
+                    }
+                  }else{
+                      if(cursor.value.wifi == availability){
+                  if(ambience.length == 0){
+                        var print = cursor.value.cafeName;
+                        var location = cursor.value.cafeLocation;
+                        var id = cursor.value.id;
+                        var ids = "a"+id+"b";
+                        var prints = print+"a";
+                        var div = document.createElement('div');
+                        div.setAttribute('id', ids);
+                        var a = document.createElement('button');
+                        //a.setAttribute('href', "");
+                        a.setAttribute('id', id);
+                        a.setAttribute('value', iterate);
+                        a.setAttribute('onclick', "callPrintMenu(this.id, this.getAttribute('value'))");
+                        a.innerHTML = print+"\t\t Location: "+location;
+                        var li = document.createElement('li');
+                          //li.setAttribute('id', i);
+                        var element = document.getElementById("cafeResults");
+                        element.appendChild(li);
+                        li.appendChild(a);
+                        li.appendChild(div);
+                        iterate++;
                   }else {
                   for(var i = 0; i < ambience.length; i++) {
                       if(cursor.value.ambience == ambience[i]){
@@ -233,6 +222,10 @@ var printCafe = function(){
                   }
               }
           }
+                  }
+                  
+              }
+              
             cursor.continue();
         }
     };     
@@ -259,7 +252,6 @@ var printMenu = function(id){
                       }
                   }else {
                       for(var i = 0; i < categories.length; i++){
-                      
                         if(categories[i] == cursor.value.menuType){
                           if(cursor.value.cafeId == id){
                             var print = cursor.value.menuName;
@@ -311,6 +303,13 @@ var resetCafe = function(){
 
 }
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./service-worker.js')
+             .then(function() { console.log('Service Worker Registered'); });
+}else{
+    console.log("ERROR");
+}
 
 
 

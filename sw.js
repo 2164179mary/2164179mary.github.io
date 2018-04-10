@@ -1,50 +1,23 @@
-/**
-const cacheName = "kaldiPWA-v1";
-const filesToCache = ["index.html"];
-
-self.addEventListener("install", function(event) {
-  // Perform install steps
-  console.log("[Servicework] Install");
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      console.log("[ServiceWorker] Caching app shell");
-      return cache.addAll(filesToCache);
-    })
-  );
+const staticAssets = [
+    './',
+    './manifest.json',
+    './home.html',
+    './CSS/index.css',
+    './CSS/home.css',
+    './CSS/Logos/cashe-logo.png',
+    './scripts/indexedDB.js',
+    './scripts/modal.js',
+    './scripts/app.js'
+];
+self.addEventListener('install', async event => {
+    const cache = await caches.open('index-static');
+    cache.addAll(staticAssets);
 });
-
-self.addEventListener("activate", function(event) {
-  console.log("[Servicework] Activate");
-  event.waitUntil(
-    caches.keys().then(function(keyList) {
-      return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName) {
-          console.log("[ServiceWorker] Removing old cache shell", key);
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
+self.addEventListener('fetch', event => {
+    const req = event.request;
+    event.respondWith(cacheFirst(req));
 });
-
-self.addEventListener("fetch", (event) => {
-  console.log("[ServiceWorker] Fetch");
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
-  );
-
-});
-**/
-'use strict';
-
-importScripts('sw-toolbox.js');
-
-toolbox.precache(["index.html","style/style.css"]);
-
-toolbox.router.get('/images/*', toolbox.cacheFirst);
-
-toolbox.router.get('/*', toolbox.networkFirst, {
-  networkTimeoutSeconds: 5
-});
+async function cacheFirst(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || fetch(req); 
+}

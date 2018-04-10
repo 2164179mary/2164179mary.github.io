@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="CSS/Logos/cashe-logo.png"/>
         <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
         <title>CashFe</title>
-        <link rel="stylesheet" type="text/css" href="CSS/index.css">
-    		<script>
-if (‘serviceWorker’ in navigator) { 
-  window.addEventListener(‘load’, function() {   
-    navigator.serviceWorker.register(‘/sw.js’).then(
-      function(registration) { 
-        // Registration was successful
-        console.log(‘ServiceWorker registration successful with scope: ‘, registration.scope); }, 
-      function(err) { 
-        // registration failed :( 
-        console.log(‘ServiceWorker registration failed: ‘, err); 
-      }); 
-  });
-}
-</script>
-  <script src = "scripts/app.js" async> </script>
-	</head>
+        <link rel="stylesheet" type="text/css" href="CSS/index.css"/>
+        <link rel="manifest" href="manifest3.json"/>
+    </head>
     <header>
         <div>
             <img id = "home-logo" src="CSS/Logos/cashe-logo.png" alt = "Cashfe Logo"/>   
@@ -35,8 +22,8 @@ if (‘serviceWorker’ in navigator) {
         <div>
             <button id = "button" type="button">CLICK ME</button>
         </div>
-       <!-- Insert link to app.js here 
+       <!-- Insert link to app.js here -->
         <script src = "scripts/app.js" async> </script>
-				<script src "sw.js" async> </script> -->
+		<!--script src "sw.js" async> </script-->
     </body>
 </html>
