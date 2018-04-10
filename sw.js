@@ -5,6 +5,7 @@ const staticAssets = [
     './CSS/index.css',
     './CSS/home.css',
     './CSS/Logos/cashe-logo.png',
+    '',
     './scripts/indexedDB.js',
     './scripts/modal.js',
     './scripts/app.js'
