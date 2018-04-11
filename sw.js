@@ -9,7 +9,8 @@ const staticAssets = [
     '',
     './scripts/indexedDB.js',
     './scripts/modal.js',
-    './scripts/app.js'
+    './scripts/app.js',
+	'./images/icons/icon-144x144.png'
 ];
 self.addEventListener('install', async event => {
     const cache = await caches.open('index-static');

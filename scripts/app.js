@@ -21,10 +21,11 @@ if ('serviceWorker' in navigator) {
 		}catch (error){
 			console.log('SW reg failed'); 
 			}
-}*/
+}
  document.getElementById("button").onclick = function () {
                     location.href="home.html";
  }
+ */
  
  
  
