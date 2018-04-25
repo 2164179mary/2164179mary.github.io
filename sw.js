@@ -1,16 +1,11 @@
 const staticAssets = [
-    './',
 	'index.html',
-    './manifest3.json',
-    './home.html',
-    './CSS/index.css',
-    './CSS/home.css',
-    './CSS/Logos/cashe-logo.png',
-    '',
-    './scripts/indexedDB.js',
-    './scripts/modal.js',
-    './scripts/app.js',
-	'./images/icons/icon-144x144.png'
+	'./script/app.js',
+	'./',
+	'',
+	'sw.js',
+	'./script/cafe.js',
+	'./script/indexeddb.js'
 ];
 self.addEventListener('install', async event => {
     const cache = await caches.open('index-static');

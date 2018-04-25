@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" type="image/png" href="CSS/Logos/cashe-logo.png"/>
+        <link rel="icon" type="image/png" href="cashe-nonglow.png"/>
         <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
         <title>CashFe</title>
         <link rel="stylesheet" type="text/css" href="CSS/index.css"/>
-        <link rel="manifest" href="manifest3.json"/>
+        <link rel="manifest" href="manifest.json"/>
     </head>
-    <header>
-        <div>
-            <img id = "home-logo" src="CSS/Logos/cashe-logo.png" alt = "Cashfe Logo"/>   
-            <br>
-            <h1>CashFe</h1> 
+    
+    <body onload="printCafe()">
+    <!-- code for the navigation bar(logo and serach bar w/buttons)-->
+    <nav id="navSearch">
+        <ul>
+        <li id="top_left">
+            <a href="index.html"><img id="home-logo" src="cafeImages/logo.PNG" alt = "Cashfe Logo"/>  </a> 
+        </li>
+        <li id="top_right">
+            
+        
+            <input id="search-cafe" type="text" placeholder="Search cafe" name="budget" required autofocus>
+            
+            <button type="button" id = "searchCafe-button" onclick="searchCafe()">Search</button>
+            
+            <button type="button" id = "searchCafe-reset" onclick="printCafe(); reset()">Reset</button>
+        
+        </li>
+            
+            
+         <!--nav bar for budget-->
+        <div class="topnav">
+        <li>
+            <div id="category">
+            </div>
+        </li>
+
+        <li>
+        <div id="menuSearch">
+            <form id="budgetForm" >
+                    <input id="budget-value" type="text" placeholder="Budget" name="budget" required autofocus>
+                    <button type="button" onclick="getCategory()" id = "budget-value1">Filter</button>
+                    <button type="button" id = "searchMenu-reset" onclick="printMenu()">reset</button>
+            </form>
+        </div>        
+        </li>
+            </div>
+        </ul>
+    </nav>
+        <div class="content">
+       
+        
+        <div id="cafeSearch">
+            
+        <!--<p>Wifi: </p>
+        <form id = "radio-wifi" >
+                <div>
+                <input type="radio" name="availability" id="yes" value="yes" onclick="getAvailability(this.id)">Yes     
+                </div>
+                <div>
+                    <input type="radio" name="availability" id="no" value="no" onclick="getAvailability(this.id)">No
+                </div>
+        </form>
+        <p>Ambience: </p>
+        <form id = "radio-ambience" >
+                <div>
+                <input type="radio" name="ambience" id="cozy" value="cozy" onclick="getAmbience(this.id)">cozy   
+                </div>
+                <div>
+                    <input type="radio" name="ambience" id="quiet" value="quiet" onclick="getAmbience(this.id)">quiet
+                </div>
+                <div>
+                    <input type="radio" name="ambience" id="casual" value="casual" onclick="getAmbience(this.id)">casual
+                </div>
+        </form>
+        <button type="button" id = "searchCafe-filter" onclick="filterCafe()">filter</button>-->
         </div>
-    </header>
-    <body>
-        <div>
-            <p>A Cafe that fits your pocket</p> 
-            <p>Know where your money can bring you </p>
+
+        <div id="cafe">
         </div>
-        <div>
-            <button id = "button" type="button" onclick = "location.href = 'home.html'">CLICK ME</button>
+        
+        <div id="menu">
         </div>
-       <!-- Insert link to app.js here -->
-        <script src = "scripts/app.js" async> </script>
-				<!--script src "sw.js" async> </script-->
+        </div>
+        <script type="text/javascript" src="./script/cafe.js"></script>
+        <script type="text/javascript" src = "./script/app.js"></script>
+        <script type="text/javascript"  src = "./script/indexeddb.js"></script>
     </body>
 </html>
