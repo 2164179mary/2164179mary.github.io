@@ -4,13 +4,35 @@ var budget = 0;
 var availability;
 var ambience;
 var currentIndex = 0;
+var data;
 //console.log(cafe[0].cafeName);
-var myJSON = JSON.stringify(cafe);
+/*var myJSON = JSON.stringify(cafe);
 //console.log(myJSON)
 
 var data = JSON.parse(myJSON);
-//console.log(data);
+//console.log(data);*/
 
+var loadJSON = function(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', './script/cafe.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+
+var json = function(){
+ loadJSON(function(response) {
+  // Parse JSON string into object
+    data = JSON.parse(response);
+     printCafe();
+ });
+}
 
 var getAvailability = function(id){
     availability = document.getElementById(id).value;
@@ -21,6 +43,8 @@ var getAmbience = function(id){
 }
 
 var printCafe = function(){
+    
+    console.log(data);
    console.log("hello");
    var myNode = document.getElementById("cafe");
     while(myNode.firstChild){
@@ -50,9 +74,9 @@ var printCafe = function(){
        h2.appendChild(address);
        
        var container = document.createElement('div');
-       container.setAttribute('class', "cafeContainer");
+	   var string = "cafeContainer"+i;
+       container.setAttribute('class', string);
        
-       var br = document.createElement('br');
        
        divForText.appendChild(h1);
        divForText.appendChild(h2);
@@ -60,7 +84,6 @@ var printCafe = function(){
        container.appendChild(divForText);
        div.appendChild(container);
        parent.appendChild(div);
-       parent.appendChild(br);
    } 
 }
 
@@ -93,7 +116,8 @@ var printCafeWithIndex = function(index){
        h2.appendChild(address);
        
        var container = document.createElement('div');
-       container.setAttribute('class', "cafeContainer");
+	   var string = "cafeContainer"+index;
+       container.setAttribute('class', string);
        
        divForText.appendChild(h1);
        divForText.appendChild(h2);
@@ -184,9 +208,9 @@ var printMenu = function(){
        h2.appendChild(price);
        div.appendChild(h1);
        div.appendChild(h2);
-       var br = document.createElement('br');
+
        parent.appendChild(div);
-       parent.appendChild(br);
+
    } 
 }
 
@@ -249,9 +273,9 @@ var getCategory = function(index){
                h2.appendChild(price);
                div.appendChild(h1);
                div.appendChild(h2);
-               var br = document.createElement('br');
+ 
                parent.appendChild(div);
-               parent.appendChild(br);
+
                exist = true;
            }
        }
@@ -270,9 +294,9 @@ var getCategory = function(index){
                h2.appendChild(price);
                div.appendChild(h1);
                div.appendChild(h2);
-               var br = document.createElement('br');
+
                parent.appendChild(div);
-               parent.appendChild(br);
+
                exist = true;
            }
        }
@@ -291,9 +315,7 @@ var getCategory = function(index){
                h2.appendChild(price);
                div.appendChild(h1);
                div.appendChild(h2);
-               var br = document.createElement('br');
                parent.appendChild(div);
-               parent.appendChild(br);
                exist = true;
            }
        }

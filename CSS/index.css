@@ -3,32 +3,78 @@
     src: url("Fonts/Quesha.ttf");
 }
 body { 
-    margin: 0; 
+    margin: 0;
     padding-top: 3%;
     background-color: whitesmoke;
 }
 .content{
-    margin: 5%;
-    height: 60%;
+    margin: 3%;
+    height: 90%;
+}
+.text{
+    width: 50%;
+    float: right;
 }
 .pic img{
-    width: 250px;
+    width: 170px;
+    height: 170px;
+    padding: 5%;
+    padding-right: 10%;
 }
 
 .pic{
     float: left;
-    padding-left: 15%;
    
 }
-.text{
-    float: left;
-    padding-left: 5%;
+.cafeContainer0{
     
-}
-.cafeContainer{
     overflow: auto;
     background-color: white;
-    padding: 1%;
+    width: 32%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    
+    
+}
+.cafeContainer1{
+    overflow: auto;
+    background-color: white;
+    width: 32%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    
+}
+.cafeContainer2{
+    overflow: auto;
+    background-color: white;
+    width: 32%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    
+}
+.cafeContainer3{
+    overflow: auto;
+    background-color: white;
+    width: 32%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    
+}
+.cafeContainer4{
+    overflow: auto;
+    background-color: white;
+    width: 32%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
     
 }
 .cafeContainer:hover{
@@ -71,9 +117,12 @@ body {
 }
 #top_right1{
     list-style: none;
-}  
+} 
 #categories {
-    padding: 15px;
+    padding: 13px;
+    font-family: verdana;
+    font-size: 15px;
+    background-color: white;
 }
 
 li {
@@ -129,18 +178,26 @@ li {
 #menu {
     font-family: Quesha;
     margin-top: 8%;
+
 }
 
 #menu div {
+    
+    width: 27%;
+    height: auto;
+    float:left;
     background-color: white; 
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 50px;
+    margin-left: 2%;
+    margin-bottom: 2%;
 }
 .topnav{
     float: right;
     padding-right: 3%;
 }
+
 /*-------------------PHONE------------------*/
 @media only screen and (max-width:670px){
     #navSearch{
@@ -215,7 +272,79 @@ li {
      height: 20px;
      width: 65px;
     }
-  
+    
+    .pic img{
+        width: 250px;
+        height: auto;
+        padding-right: 0;
+        padding: 0;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+
+    .pic{
+        float: left;
+   
+    }
+    .text{
+        width: 100%;
+        float: right;
+
+    }
+    .cafeContainer0 {
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        padding: 1%;
+        margin: 0;
+        margin-bottom: 3%;
+    }
+    .cafeContainer1 {
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        padding: 1%; 
+        margin: 0;
+        margin-bottom: 3%;
+    }
+    .cafeContainer2 {
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        padding: 1%;
+        margin: 0;
+        margin-bottom: 3%;
+    }
+    .cafeContainer3 {
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        padding: 1%;
+        margin: 0;
+        margin-bottom: 3%;
+    }
+    .cafeContainer4 {
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        padding: 1%;
+        margin: 0;
+        margin-bottom: 3%;
+    }
+#menu {
+    font-family: Quesha;
+    margin-top: 8%;
+}
+
+#menu div {
+    width: 80%;
+    background-color: white; 
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+}
 }
 /*-------------------TABLET------------------*/
 
@@ -245,7 +374,8 @@ li {
     
     }
     .content{
-        margin-top: 15%;
+        margin: 2%;
+        margin-top: 16%;
     }
     
     #search-cafe, #budget-value{
@@ -295,5 +425,87 @@ li {
     #budget-value{
         padding: 10px 8px;
     }
+        
+.text{
+    float: right;
+    padding: 1px;
+}
+.pic img{
+    width: 170px;
+    height: 170px;
+    padding: 5%;
+}
+
+.pic{
+    float: left;
+   
+}
+.cafeContainer0{
+    
+    overflow: auto;
+    background-color: white;
+    width: 47%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    
+    
+}
+.cafeContainer1{
+    overflow: auto;
+    background-color: white;
+    width: 47%;
+    height: 20%;
+    float: right;
+    margin-bottom: 2%;
+    
+}
+.cafeContainer2{
+    overflow: auto;
+    background-color: white;
+    width: 47%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    
+    
+}
+.cafeContainer3{
+    overflow: auto;
+    background-color: white;
+    width: 47%;
+    height: 20%;
+    float: right;
+    margin-bottom: 2%;
+    
+}
+.cafeContainer4{
+    overflow: auto;
+    background-color: white;
+    width: 47%;
+    height: 20%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    
+    
+}
+        
+#menu div {
+    width: 46%;
+    height: auto;
+    float:left;
+    background-color: white;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 2%;
+} 
+
         
 }

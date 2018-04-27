@@ -3,8 +3,15 @@
         "cafeID": 0,
         "cafeName": "Arca's Yard",
         "cafeLocation": "777 Tiptop, Ambuklao Rd, Baguio City",
-        "wifi": true,
+        "wifi": "yes",
         "ambience": "cozy",
+        "x": 0,
+        "y": 0,
+        "image": "./cafeImages/arca.png",
+        "alias": 
+        [
+            "arca", "arca's", "arca yard", "arca's yard"
+        ],
         "menu": [
             {
                 "menuName": "Benguet Coffee",
@@ -87,8 +94,15 @@
         "cafeID": 1,
         "cafeName": "Beans Talk",
         "cafeLocation": "MPB Bldg 45 Session Rd, Baguio City",
-        "wifi": false,
+        "wifi": "no",
         "ambience": "casual",
+        "x": 0,
+        "y": 0,
+        "image": "./cafeImages/beanstalk_logo.png",
+        "alias": 
+        [
+            "beans", "talk", "beanstalk", "beans talk", "beantalk", "bean talk"
+        ],
         "menu": [
             {
                 "menuName": "Longganisa",
@@ -202,7 +216,7 @@
             },
             {
                 "menuName": "Cappuccino",
-                "type": "drinks",
+                "type": "drinks" ,
                 "price": 70
             },
             {
@@ -236,8 +250,15 @@
         "cafeID": 2,
         "cafeName": "Gossip Coffee Shop",
         "cafeLocation": "76 Upper General Luna Road, Baguio City",
-        "wifi": true,
+        "wifi": "yes",
         "ambience": "quiet",
+        "x": 0,
+        "y": 0,
+        "image": "./cafeImages/gossip.jpg",
+        "alias": 
+        [
+            "gossip", "gossip shop", "gossip cafe", "gossip coffee", "gossip coffee shop"
+        ],
         "menu": [
             {
                 "menuName": "Cecilia",
@@ -340,8 +361,15 @@
         "cafeID": 3,
         "cafeName": "Cafe In The Sky",
         "cafeLocation": "Mt Sto Tomas, Poblacion Kabuyao, Tubao, Baguio City",
-        "wifi": true,
+        "wifi": "yes",
         "ambience": "casual",
+        "x": 0,
+        "y": 0,
+        "image": "./cafeImages/Cafe-in-the-Sky-Baguio-Main.png",
+        "alias": 
+        [
+            "sky", "cafe sky", "cafe in sky"
+        ],
         "menu": [
             {
                 "menuName": "Crispy Sky Rolls",
@@ -409,8 +437,15 @@
         "cafeID": 4,
         "cafeName": "Cafe Sabel",
         "cafeLocation": "BenCab Museum, Baguio City",
-        "wifi": false,
+        "wifi": "no",
         "ambience": "quiet",
+        "x": 0,
+        "y": 0,
+        "image": "./cafeImages/sabel.jpg",
+        "alias": 
+        [
+            "sabel", "cafe sabel", "cafesabel"
+        ],
         "menu": [
             {
                 "menuName": "Camote Fries",
