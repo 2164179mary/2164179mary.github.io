@@ -10,7 +10,7 @@
         "image": "./cafeImages/arca.png",
         "alias": 
         [
-            "arca", "arca's", "arca yard", "arca's yard"
+            "arca", "arca's", "arca yard", "arca's yard", "a", "ar", "arc", "yard", "y", "ya", "yar"
         ],
         "menu": [
             {
@@ -101,7 +101,7 @@
         "image": "./cafeImages/beanstalk_logo.png",
         "alias": 
         [
-            "beans", "talk", "beanstalk", "beans talk", "beantalk", "bean talk"
+            "beans", "talk", "beanstalk", "beans talk", "beantalk", "bean talk", "b", "be", "bea", "bean", "t", "ta", "tal"
         ],
         "menu": [
             {
@@ -257,7 +257,7 @@
         "image": "./cafeImages/gossip.jpg",
         "alias": 
         [
-            "gossip", "gossip shop", "gossip cafe", "gossip coffee", "gossip coffee shop"
+            "gossip", "gossip shop", "gossip cafe", "gossip coffee", "gossip coffee shop", "g", "go", "gos", "goss", "gossi", "coffee", "shop"
         ],
         "menu": [
             {
@@ -368,7 +368,7 @@
         "image": "./cafeImages/Cafe-in-the-Sky-Baguio-Main.png",
         "alias": 
         [
-            "sky", "cafe sky", "cafe in sky"
+            "sky", "cafe sky", "cafe in sky", "ca", "c", "caf", "cafe"
         ],
         "menu": [
             {
@@ -444,7 +444,7 @@
         "image": "./cafeImages/sabel.jpg",
         "alias": 
         [
-            "sabel", "cafe sabel", "cafesabel"
+            "sabel", "cafe sabel", "cafesabel", "c", "ca", "caf", "cafe"
         ],
         "menu": [
             {

@@ -12,6 +12,9 @@ var data;
 var data = JSON.parse(myJSON);
 //console.log(data);*/
 
+
+
+
 var loadJSON = function(callback) {   
 
     var xobj = new XMLHttpRequest();

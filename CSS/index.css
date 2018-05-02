@@ -226,12 +226,13 @@ li {
     }
     
     #search-cafe, #budget-value{
-        padding: 2px 1px;
+        max-width: 130px;
+        padding: 9px 2px;
         font-size: 12px;
         text-align: center;
     }
     #searchCafe-button, #searchCafe-reset, #searchMenu-reset, #budget-value1{
-        padding: 4px 3px;
+        padding:9px 7px;
         font-family: verdana;
         background-color: mediumseagreen;
         border: none;
@@ -239,7 +240,7 @@ li {
         color: white;
         text-align: center;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 12px;
         cursor: pointer;
 }
     #top_right{
@@ -509,3 +510,29 @@ li {
 
         
 }
+@media only screen and (max-width:640px){
+    #search-cafe, #budget-value{
+        max-width: 100px;
+        padding: 7px 3px;
+        font-size: 12px;
+        text-align: center;
+    }
+    #searchCafe-button, #searchCafe-reset, #searchMenu-reset, #budget-value1{
+        padding:7px 6px;
+        font-family: verdana;
+        background-color: mediumseagreen;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}
+
+#cafe > div div:first-child:hover{
+	background-color:#d4d7cd;
+}
+
+

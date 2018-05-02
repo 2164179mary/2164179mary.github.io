@@ -1,17 +1,10 @@
 const staticAssets = [
 	'index.html',
-	'./script/app.js',
 	'./',
 	'',
-	'sw.js',
-	'./script/cafe.js',
-	'./script/indexeddb.js',
-	'./cafeImages/',
-	'./CSS/fonts/Quesha.ttf',
-	'./CSS/index.css',
-	'./icons/',
-	'manifest.json',
-	'sw.js'
+	'./script/cafe.json',
+	'./script/app.js',
+	'./script/indexeddb.js'
 ];
 self.addEventListener('install', async event => {
     const cache = await caches.open('index-static');
